@@ -3,32 +3,40 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Muneerah Khan",
-    text: "Place is small but very relaxing and I enjoyed the massage… it was very lekker. Thank you Charmaine. I received a gift from a colleague that recognised that I needed a little pampering… it was well received 🙂",
+    name: "muneerah khan",
+    text: "Place is small but very relaxing and I enjoyed the massage....it was very lekker. Thank you Charmaine. I received a gift from a colleague that recognised that I needed a little pampering...it was well received 🙂",
+    expandable: false,
   },
   {
     name: "Terry Wallace",
-    text: "What an absolutely amazing experience at BeYOUtique Spa! From the moment we arrived, we were warmly welcomed and made to feel comfortable and at ease right away.\n\nWe were then shown to the massage room to prepare for our 60-minute Deep Tissue Massage, and it was nothing short of incredible. The therapists were attentive, skilled, and knew exactly how to work through the tension while still keeping the experience soothing and relaxing.\n\nThe room was peaceful, the atmosphere tranquil, and every detail contributed to a deeply therapeutic and rejuvenating session. We left feeling refreshed, relaxed, and completely renewed.\n\nThank you to the wonderful team for such a professional and comforting experience. I will definitely be coming back soon. Highly recommended.",
+    text: "What an absolutely amazing experience at Be'YOU'tique Spa! From the moment we arrived, we were warmly welcomed by Nosipho at the front desk, who made us feel comfortable and at ease right away. Her friendly and professional manner set the tone for what turned out to be a truly relaxing visit.\n\nWe were then shown to the massage room to prepare for our 60-minute Deep Tissue Massage, and it was nothing short of incredible. Nosipho and Charmaine were our massage therapists, and they were both exceptional. They were attentive, skilled, and knew exactly how to work through all the tension while still making the experience soothing and relaxing. The pressure was calming I could really feel the stress melting away.\n\nThe room was peaceful, the atmosphere was tranquil, and every detail contributed to a deeply therapeutic and rejuvenating session. We left feeling refreshed, relaxed, and completely renewed.\n\nThank you to the wonderful team at Be'YOU'tique Spa for such a professional and comforting experience. I will definitely be coming back for another session soon. I highly recommend this Spa 🙆🏽‍♀️✨",
+    expandable: true,
   },
   {
     name: "Stacey Campbell",
-    text: "Just had the most beautiful experience… We had a couples massage booked for our anniversary and it was absolutely beautiful. The staff was friendly and welcoming. I would definitely recommend them.",
+    text: "Just had the most beautiful experience with Sibongile and Analisa.. We had a couples massage booked for our 7 year anniversary and it was absolutely beautiful.. The staff was friendly and welcomed us.. I would definitely recommend them..",
+    expandable: false,
   },
   {
     name: "Aaminah Davids",
-    text: "Called early morning to book a massage as I had immense back pain. They were able to accommodate me the same day. The experience was lovely. Very professional.",
+    text: "Called early morning to book a massage as I had immense back pain. They were able to accomodate me the same day. The experience was lovely. Very professional.",
+    expandable: false,
   },
   {
     name: "Rene Williams",
-    text: "The service was excellent upon making the booking. I got about my baby bump, probably snored a little too, the facial and head massage was the cherry on top. Thank you, I will definitely be back.",
+    text: "The service was excellent upon making the booking, but let me tell u, Maggi❤️❤️❤️you were absolutely amazing, u made me feel so comfortable (i got about my baby bump), i was so relaxed, probably snored a lil too, the facial and head massage was the cherry on top. Thank u, thank u, thank u, i will definitely be back💐",
+    expandable: false,
   },
 ];
 
-const CHAR_LIMIT = 180;
+const PREVIEW_LENGTH = 220;
 
-const TestimonialCard = ({ name, text }: { name: string; text: string }) => {
-  const isLong = text.length > CHAR_LIMIT;
+const TestimonialCard = ({ name, text, expandable }: { name: string; text: string; expandable: boolean }) => {
   const [expanded, setExpanded] = useState(false);
+
+  const displayText = expandable && !expanded
+    ? `${text.slice(0, PREVIEW_LENGTH).trimEnd()}…`
+    : text;
 
   return (
     <div className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-2xl p-8 transition-all duration-300 hover:bg-primary-foreground/10 hover:border-primary-foreground/20">
@@ -39,14 +47,14 @@ const TestimonialCard = ({ name, text }: { name: string; text: string }) => {
       </div>
       <div className="mb-6">
         <p className="font-body text-primary-foreground/80 text-sm leading-relaxed italic whitespace-pre-line">
-          "{expanded || !isLong ? text : `${text.slice(0, CHAR_LIMIT).trimEnd()}…`}"
+          "{displayText}"
         </p>
-        {isLong && (
+        {expandable && (
           <button
             onClick={() => setExpanded(!expanded)}
             className="font-body text-accent hover:text-accent/80 text-xs mt-3 transition-colors duration-200 tracking-wide uppercase"
           >
-            {expanded ? "Show Less" : "Read More"}
+            {expanded ? "Show Less" : "See More"}
           </button>
         )}
       </div>
