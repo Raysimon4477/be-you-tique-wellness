@@ -1,26 +1,41 @@
-import { Leaf, Heart, Sparkles } from "lucide-react";
+import { Leaf, Heart, Sparkles, Hand, FlowerIcon, Footprints } from "lucide-react";
 
 const services = [
   {
     icon: Leaf,
     title: "Swedish Massage",
-    description: "A gentle, full-body massage using long, flowing strokes to ease tension and promote deep relaxation.",
+    description: "Gentle, flowing strokes to ease tension and promote deep relaxation.",
     price: "From R450",
-    duration: "60 min",
   },
   {
     icon: Heart,
     title: "Deep Tissue Massage",
-    description: "Targeted pressure to release chronic muscle tension and knots, restoring mobility and comfort.",
+    description: "Targeted pressure to release chronic muscle knots and restore mobility.",
     price: "From R550",
-    duration: "60 min",
+  },
+  {
+    icon: Hand,
+    title: "Back, Neck & Shoulder Massage",
+    description: "Focused relief for upper-body stress and stiffness.",
+    price: "From R350",
   },
   {
     icon: Sparkles,
     title: "Relaxation Therapy",
-    description: "A holistic blend of aromatherapy and gentle massage techniques for total mind-body rejuvenation.",
+    description: "Aromatherapy and gentle techniques for total mind-body rejuvenation.",
     price: "From R500",
-    duration: "75 min",
+  },
+  {
+    icon: FlowerIcon,
+    title: "Basic Deep Cleanse Facial",
+    description: "A purifying facial to refresh, cleanse, and revitalise your skin.",
+    price: "From R400",
+  },
+  {
+    icon: Footprints,
+    title: "Pedicure",
+    description: "Foot soak, file & exfoliate for smooth, pampered feet.",
+    price: "From R300",
   },
 ];
 
@@ -33,22 +48,21 @@ const ServicesSection = () => {
           <h2 className="font-heading text-4xl md:text-5xl text-primary font-light">Our Services</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-background rounded-2xl p-8 md:p-10 text-center shadow-sm hover:shadow-md transition-shadow duration-500 group"
+              className="bg-background rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-500 group"
             >
-              <div className="w-14 h-14 mx-auto mb-6 rounded-full bg-cream flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-500">
-                <service.icon className="w-6 h-6 text-gold" />
+              <div className="w-12 h-12 mx-auto mb-5 rounded-full bg-cream flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-500">
+                <service.icon className="w-5 h-5 text-gold" />
               </div>
-              <h3 className="font-heading text-2xl text-primary mb-3">{service.title}</h3>
-              <p className="font-body text-muted-foreground text-sm leading-relaxed mb-6">
+              <h3 className="font-heading text-xl text-primary mb-2">{service.title}</h3>
+              <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">
                 {service.description}
               </p>
               <div className="border-t border-border pt-4">
-                <span className="font-heading text-xl text-gold">{service.price}</span>
-                <span className="text-muted-foreground text-xs ml-2 font-body">/ {service.duration}</span>
+                <span className="font-heading text-lg text-gold">{service.price}</span>
               </div>
             </div>
           ))}
