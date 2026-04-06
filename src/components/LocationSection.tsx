@@ -16,11 +16,16 @@ const LocationSection = () => {
             </div>
             <div>
               <h3 className="font-heading text-xl text-primary mb-1">Address</h3>
-              <p className="font-body text-muted-foreground text-sm leading-relaxed">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Unit+136+Millennium+Business+Park+19+Edison+Way+Century+City+7441"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-muted-foreground text-sm leading-relaxed hover:text-primary transition-colors"
+              >
                 Unit 136, Millennium Business Park<br />
                 19 Edison Way, Century City<br />
                 7441
-              </p>
+              </a>
             </div>
           </div>
 
@@ -73,7 +78,7 @@ const LocationSection = () => {
 
           <div className="text-center mt-8">
             <a
-              href="https://www.google.com/maps/dir//Millennium+Business+Park,+19+Edison+Way,+Century+City,+7441"
+              href="https://www.google.com/maps/search/?api=1&query=Unit+136+Millennium+Business+Park+19+Edison+Way+Century+City+7441"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-background font-body text-xs tracking-[0.15em] uppercase px-8 py-3 rounded-full transition-colors"
