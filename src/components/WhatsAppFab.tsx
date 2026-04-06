@@ -1,4 +1,4 @@
-const WHATSAPP_URL = "https://wa.me/27722679555?text=Hi%20I'd%20like%20to%20book%20a%20treatment%20at%20BeYOUtique";
+const WHATSAPP_URL = "https://wa.me/27725066931?text=Hi%20I'd%20like%20to%20book%20a%20treatment";
 
 const WhatsAppFab = () => {
   return (
