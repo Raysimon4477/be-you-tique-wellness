@@ -50,7 +50,7 @@ const LocationSection = () => {
             <div>
               <h3 className="font-heading text-xl text-primary mb-1">Contact</h3>
               <p className="font-body text-muted-foreground text-sm leading-relaxed">
-                <a href="tel:+27725066931" className="hover:text-primary transition-colors">072 506 6931</a><br />
+                <a href="tel:+27722679555" className="hover:text-primary transition-colors">072 267 9555</a><br />
                 hello@beyoutique.co.za
               </p>
             </div>
