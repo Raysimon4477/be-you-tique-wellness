@@ -16,11 +16,16 @@ const LocationSection = () => {
             </div>
             <div>
               <h3 className="font-heading text-xl text-primary mb-1">Address</h3>
-              <p className="font-body text-muted-foreground text-sm leading-relaxed">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Unit+136+Millennium+Business+Park+19+Edison+Way+Century+City+7441"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-muted-foreground text-sm leading-relaxed hover:text-primary transition-colors"
+              >
                 Unit 136, Millennium Business Park<br />
                 19 Edison Way, Century City<br />
                 7441
-              </p>
+              </a>
             </div>
           </div>
 
