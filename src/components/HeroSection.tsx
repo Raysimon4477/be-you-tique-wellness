@@ -1,5 +1,5 @@
 import heroImg from "@/assets/hero-spa.jpg";
-import logoImg from "@/assets/beyoutique-logo.png";
+import logoImg from "@/assets/beyoutique-logo-clean.png";
 
 const WHATSAPP_URL = "https://wa.me/27722679555?text=Hi%20I'd%20like%20to%20book%20a%20treatment%20at%20BeYOUtique";
 
