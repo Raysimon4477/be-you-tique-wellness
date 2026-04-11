@@ -21,8 +21,11 @@ const HeroSection = () => {
         <img
           src={logoImg}
           alt="Be'YOU'tique – Relax Renew Revitalize"
-          className="w-[280px] md:w-[380px] lg:w-[440px] h-auto mb-8 animate-fade-up drop-shadow-lg"
+          className="w-[320px] md:w-[440px] lg:w-[520px] h-auto mb-5 animate-fade-up"
         />
+        <p className="font-body text-primary-foreground/80 text-base md:text-lg font-light max-w-xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+          A boutique massage experience designed for your well-being
+        </p>
         <a
           href={WHATSAPP_URL}
           target="_blank"
