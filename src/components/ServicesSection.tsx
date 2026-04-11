@@ -35,7 +35,7 @@ const categories: Category[] = [
   },
   {
     icon: Sun,
-    title: "Facial and Massage Spa",
+    title: "Facial & Massage Spa",
     featured: true,
     services: [
       { name: "Glow and Unwind for 1 Person", duration: "1 hr, 30 mins", price: "R 320", description: "Full Body, Facial, Head Massage" },
