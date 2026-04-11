@@ -1,4 +1,4 @@
-import { Leaf, Heart, Hand, Sparkles, FlowerIcon, Scissors, Plus } from "lucide-react";
+import { Leaf, Heart, Hand, Sparkles, FlowerIcon, Scissors, Plus, Flame, Sun } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -6,80 +6,107 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const categories = [
+interface Service {
+  name: string;
+  duration: string;
+  price: string;
+  description?: string;
+}
+
+interface Category {
+  icon: React.ElementType;
+  title: string;
+  services: Service[];
+}
+
+const categories: Category[] = [
   {
     icon: Hand,
     title: "Massage",
     services: [
-      { name: "Back, Neck & Shoulder", duration: "30 mins", price: "R190" },
-      { name: "Deep Tissue Massage", duration: "1 hr", price: "R350" },
-      { name: "Swedish Massage", duration: "1 hr", price: "R300" },
+      { name: "Back, Neck and Shoulder", duration: "30 mins", price: "R 190" },
+      { name: "Deep Tissue Massage", duration: "1 hr", price: "R 400" },
+      { name: "Swedish Massage", duration: "1 hr", price: "R 350" },
     ],
   },
   {
     icon: Sparkles,
-    title: "Facial & Skincare",
+    title: "Facials & Skincare",
     services: [
-      { name: "Facial", duration: "1 hr", price: "R300" },
-      { name: "Skin Tag Removal (Consultation)", duration: "", price: "From R200" },
-    ],
-  },
-  {
-    icon: FlowerIcon,
-    title: "Nails",
-    services: [
-      { name: "Express Pedi", duration: "", price: "R100" },
-      { name: "Cut & File Toenails", duration: "", price: "R70" },
-      { name: "Acrylic or Hard Gel Soak Off", duration: "", price: "R90" },
-      { name: "Gel Polish Soak Off", duration: "", price: "R50" },
-      { name: "Soft Gel Tips", duration: "", price: "R250" },
-      { name: "Express Mani", duration: "", price: "R120" },
-      { name: "Gel Polish Overlay", duration: "", price: "R160" },
-      { name: "French Nail Art", duration: "", price: "R50" },
-      { name: "Gel Toes", duration: "", price: "R150" },
-      { name: "Manicure with Polish", duration: "", price: "R200" },
-      { name: "Full Mani with Gel", duration: "", price: "R240" },
-      { name: "Pedicure with Gel", duration: "", price: "R260" },
-    ],
-  },
-  {
-    icon: Scissors,
-    title: "Hair Removal",
-    services: [
-      { name: "Underarm", duration: "", price: "R110" },
-      { name: "Hollywood Wax", duration: "", price: "R320" },
-      { name: "Side Burns", duration: "", price: "R90" },
-      { name: "Bikini Wax", duration: "", price: "R180" },
-      { name: "Brazilian Wax", duration: "", price: "R280" },
-      { name: "Full Leg", duration: "", price: "R220" },
-      { name: "Chin Wax", duration: "", price: "R90" },
-      { name: "Lip Wax", duration: "", price: "R80" },
-      { name: "Brow Wax", duration: "", price: "R90" },
-      { name: "Brow Tinting", duration: "", price: "R90" },
-      { name: "Brow Threading", duration: "", price: "R100" },
+      { name: "Skin Tag Removal", duration: "1 hr", price: "R 200", description: "Consultation required, from R200" },
+      { name: "Facial", duration: "1 hr", price: "R 300" },
     ],
   },
   {
     icon: Heart,
     title: "Spa Packages",
     services: [
-      { name: "Facial & Full Body Massage", duration: "", price: "R295" },
-      { name: "Express Pamper", duration: "", price: "R200" },
-      { name: "Love Your Feet Pedicure", duration: "", price: "R200" },
-      { name: "Couples Pamper Package", duration: "", price: "R295" },
-      { name: "Single Massage", duration: "", price: "R200" },
-      { name: "Couples Massage", duration: "", price: "R195" },
+      { name: "Express Pamper", duration: "1 hr", price: "R 200", description: "Price per person" },
+      { name: "Love Your Feet Pedicure", duration: "1 hr, 10 mins", price: "R 200" },
+      { name: "Couples Pamper Package", duration: "1 hr, 20 mins", price: "R 295", description: "Price per person" },
+      { name: "Single Massage", duration: "1 hr", price: "R 200" },
+      { name: "Couples Massage", duration: "1 hr", price: "R 195", description: "Price per person" },
+    ],
+  },
+  {
+    icon: Sun,
+    title: "Facial and Massage Spa",
+    services: [
+      { name: "Glow and Unwind for 1 Person", duration: "1 hr, 30 mins", price: "R 320", description: "Full body, facial, head massage" },
+      { name: "Couples Glow and Unwind Package", duration: "1 hr, 30 mins", price: "R 300", description: "Price per person — full body, facial and head massage" },
+    ],
+  },
+  {
+    icon: Flame,
+    title: "Warming Packages",
+    services: [
+      { name: "Hot Stone Swedish Massage", duration: "1 hr", price: "R 250" },
+      { name: "Warm Foot Pamper", duration: "1 hr, 10 mins", price: "R 250", description: "Cuticles, file, buff and gel paint, soak, exfoliate, foot massage and hot paraffin dip" },
     ],
   },
   {
     icon: Plus,
-    title: "Add-ons",
+    title: "Add-Ons",
     services: [
-      { name: "Express Facial", duration: "30 mins", price: "R150" },
-      { name: "Add on Full Body", duration: "20 mins", price: "R100" },
-      { name: "Add Tips", duration: "", price: "R100" },
-      { name: "Hot Stones", duration: "", price: "R50" },
-      { name: "Gel Toes", duration: "", price: "R100" },
+      { name: "Express Facial Add-On", duration: "30 mins", price: "R 150" },
+      { name: "Full Body Massage Add-On", duration: "20 mins", price: "R 100" },
+      { name: "Tip Application Add-On", duration: "30 mins", price: "R 100" },
+      { name: "Hot Stones Add-On", duration: "5 mins", price: "R 50" },
+    ],
+  },
+  {
+    icon: FlowerIcon,
+    title: "Nails",
+    services: [
+      { name: "Express Pedi", duration: "30 mins", price: "R 100", description: "Cut, shape, buff and paint toenails" },
+      { name: "Cut and File Toenails", duration: "15 mins", price: "R 70" },
+      { name: "Acrylic or Hard Gel Soak-Off", duration: "35 mins", price: "R 90" },
+      { name: "Gel Polish Soak-Off", duration: "25 mins", price: "R 50" },
+      { name: "Soft Gel Tips", duration: "1 hr, 30 mins", price: "R 250" },
+      { name: "Express Mani", duration: "30 mins", price: "R 120" },
+      { name: "Gel Polish Overlay", duration: "1 hr", price: "R 160" },
+      { name: "French Nail Art Add-On", duration: "30 mins", price: "R 50", description: "Adding French lines on nails" },
+      { name: "Gel Toes", duration: "50 mins", price: "R 150" },
+      { name: "Manicure with Nail Polish", duration: "1 hr", price: "R 200" },
+      { name: "Full Manicure with Gel", duration: "1 hr, 15 mins", price: "R 260" },
+      { name: "Pedicure with Gel", duration: "1 hr, 15 mins", price: "R 280" },
+    ],
+  },
+  {
+    icon: Scissors,
+    title: "Hair Removal",
+    services: [
+      { name: "Underarm", duration: "20 mins", price: "R 110" },
+      { name: "Hollywood Wax", duration: "1 hr", price: "R 320" },
+      { name: "Sideburns", duration: "20 mins", price: "R 90" },
+      { name: "Bikini Wax", duration: "20 mins", price: "R 180" },
+      { name: "Brazilian Wax", duration: "40 mins", price: "R 280" },
+      { name: "Full Leg", duration: "1 hr, 20 mins", price: "R 220" },
+      { name: "Chin Wax", duration: "15 mins", price: "R 90" },
+      { name: "Lip Wax", duration: "15 mins", price: "R 80" },
+      { name: "Brow Wax", duration: "15 mins", price: "R 90" },
+      { name: "Brow Tinting", duration: "1 hr, 20 mins", price: "R 90" },
+      { name: "Brow Threading", duration: "20 mins", price: "R 100" },
     ],
   },
 ];
@@ -120,7 +147,7 @@ const ServicesSection = () => {
                     {category.services.map((service) => (
                       <div
                         key={service.name}
-                        className="flex items-center justify-between py-4 first:pt-0 last:pb-0"
+                        className="flex items-start justify-between py-4 first:pt-0 last:pb-0"
                       >
                         <div className="flex flex-col gap-0.5">
                           <span className="font-body text-sm md:text-base text-foreground">
@@ -129,6 +156,11 @@ const ServicesSection = () => {
                           {service.duration && (
                             <span className="font-body text-xs text-muted-foreground">
                               {service.duration}
+                            </span>
+                          )}
+                          {service.description && (
+                            <span className="font-body text-xs text-muted-foreground italic">
+                              {service.description}
                             </span>
                           )}
                         </div>
