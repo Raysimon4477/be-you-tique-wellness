@@ -16,10 +16,32 @@ interface Service {
 interface Category {
   icon: React.ElementType;
   title: string;
+  featured?: boolean;
   services: Service[];
 }
 
 const categories: Category[] = [
+  {
+    icon: Heart,
+    title: "Spa Packages",
+    featured: true,
+    services: [
+      { name: "Express Pamper", duration: "1 hr", price: "R 200", description: "Price per person" },
+      { name: "Love Your Feet Pedicure", duration: "1 hr, 10 mins", price: "R 200" },
+      { name: "Couples Pamper Package", duration: "1 hr, 20 mins", price: "R 295", description: "Price per person" },
+      { name: "Single Massage", duration: "1 hr", price: "R 200" },
+      { name: "Couples Massage", duration: "1 hr", price: "R 195", description: "Price per person" },
+    ],
+  },
+  {
+    icon: Sun,
+    title: "Facial and Massage Spa",
+    featured: true,
+    services: [
+      { name: "Glow and Unwind for 1 Person", duration: "1 hr, 30 mins", price: "R 320", description: "Full Body, Facial, Head Massage" },
+      { name: "Couples Glow and Unwind Package", duration: "1 hr, 30 mins", price: "R 300", description: "Price per person — Full Body, Facial and Head Massage" },
+    ],
+  },
   {
     icon: Hand,
     title: "Massage",
@@ -38,47 +60,10 @@ const categories: Category[] = [
     ],
   },
   {
-    icon: Heart,
-    title: "Spa Packages",
-    services: [
-      { name: "Express Pamper", duration: "1 hr", price: "R 200", description: "Price per person" },
-      { name: "Love Your Feet Pedicure", duration: "1 hr, 10 mins", price: "R 200" },
-      { name: "Couples Pamper Package", duration: "1 hr, 20 mins", price: "R 295", description: "Price per person" },
-      { name: "Single Massage", duration: "1 hr", price: "R 200" },
-      { name: "Couples Massage", duration: "1 hr", price: "R 195", description: "Price per person" },
-    ],
-  },
-  {
-    icon: Sun,
-    title: "Facial and Massage Spa",
-    services: [
-      { name: "Glow and Unwind for 1 Person", duration: "1 hr, 30 mins", price: "R 320", description: "Full body, facial, head massage" },
-      { name: "Couples Glow and Unwind Package", duration: "1 hr, 30 mins", price: "R 300", description: "Price per person — full body, facial and head massage" },
-    ],
-  },
-  {
-    icon: Flame,
-    title: "Warming Packages",
-    services: [
-      { name: "Hot Stone Swedish Massage", duration: "1 hr", price: "R 250" },
-      { name: "Warm Foot Pamper", duration: "1 hr, 10 mins", price: "R 250", description: "Cuticles, file, buff and gel paint, soak, exfoliate, foot massage and hot paraffin dip" },
-    ],
-  },
-  {
-    icon: Plus,
-    title: "Add-Ons",
-    services: [
-      { name: "Express Facial Add-On", duration: "30 mins", price: "R 150" },
-      { name: "Full Body Massage Add-On", duration: "20 mins", price: "R 100" },
-      { name: "Tip Application Add-On", duration: "30 mins", price: "R 100" },
-      { name: "Hot Stones Add-On", duration: "5 mins", price: "R 50" },
-    ],
-  },
-  {
     icon: FlowerIcon,
     title: "Nails",
     services: [
-      { name: "Express Pedi", duration: "30 mins", price: "R 100", description: "Cut, shape, buff and paint toenails" },
+      { name: "Express Pedi", duration: "30 mins", price: "R 100", description: "Cut, Shape, Buff and Paint Toenails" },
       { name: "Cut and File Toenails", duration: "15 mins", price: "R 70" },
       { name: "Acrylic or Hard Gel Soak-Off", duration: "35 mins", price: "R 90" },
       { name: "Gel Polish Soak-Off", duration: "25 mins", price: "R 50" },
@@ -107,6 +92,24 @@ const categories: Category[] = [
       { name: "Brow Wax", duration: "15 mins", price: "R 90" },
       { name: "Brow Tinting", duration: "1 hr, 20 mins", price: "R 90" },
       { name: "Brow Threading", duration: "20 mins", price: "R 100" },
+    ],
+  },
+  {
+    icon: Flame,
+    title: "Warming Packages",
+    services: [
+      { name: "Hot Stone Swedish Massage", duration: "1 hr", price: "R 250" },
+      { name: "Warm Foot Pamper", duration: "1 hr, 10 mins", price: "R 250", description: "Cuticles, file, buff and gel paint, soak, exfoliate, foot massage and hot paraffin dip" },
+    ],
+  },
+  {
+    icon: Plus,
+    title: "Add-Ons",
+    services: [
+      { name: "Express Facial Add-On", duration: "30 mins", price: "R 150" },
+      { name: "Full Body Massage Add-On", duration: "20 mins", price: "R 100" },
+      { name: "Tip Application Add-On", duration: "30 mins", price: "R 100" },
+      { name: "Hot Stones Add-On", duration: "5 mins", price: "R 50" },
     ],
   },
 ];
