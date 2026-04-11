@@ -63,7 +63,7 @@ const LocationSection = () => {
             Conveniently located in Century City for your relaxation needs
           </p>
 
-          <div className="rounded-lg overflow-hidden shadow-sm aspect-video">
+          <div className="rounded-lg overflow-hidden shadow-sm h-[250px] md:h-[350px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.3230122731006!2d18.51762167727411!3d-33.8813339732218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5d18f5deb399%3A0xfa0dad579d8ba1e6!2sMillennium%20Business%20Park!5e0!3m2!1sen!2sza!4v1775478801888!5m2!1sen!2sza"
               width="100%"
