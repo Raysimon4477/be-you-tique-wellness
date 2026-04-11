@@ -1,5 +1,5 @@
 import heroImg from "@/assets/hero-spa.jpg";
-import logoImg from "@/assets/beyoutique-logo.png";
+import logoImg from "@/assets/beyoutique-logo-gold-flat.png";
 
 const WHATSAPP_URL = "https://wa.me/27722679555?text=Hi%20I'd%20like%20to%20book%20a%20treatment%20at%20BeYOUtique";
 
@@ -17,13 +17,16 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-primary/60" />
       </div>
 
-      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto flex flex-col items-center">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
         <img
           src={logoImg}
           alt="Be'YOU'tique – Relax Renew Revitalize"
-          className="w-[320px] md:w-[440px] lg:w-[520px] h-auto mb-5 animate-fade-up"
+          className="w-[360px] max-w-[92vw] md:w-[520px] lg:w-[600px] h-auto mb-4 animate-fade-up"
         />
-        <p className="font-body text-primary-foreground/80 text-base md:text-lg font-light max-w-xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+        <p
+          className="font-body text-primary-foreground text-base md:text-lg font-light max-w-xl mx-auto mb-8 animate-fade-up"
+          style={{ animationDelay: "0.15s" }}
+        >
           A boutique massage experience designed for your well-being
         </p>
         <a
