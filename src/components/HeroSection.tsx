@@ -21,12 +21,12 @@ const HeroSection = () => {
         <img
           src={logoImg}
           alt="Be'YOU'tique – Relax Renew Revitalize"
-          className="max-w-[280px] md:max-w-[480px] w-auto h-auto mb-4"
+          className="max-w-[340px] md:max-w-[600px] w-auto h-auto mb-6"
           style={{ imageRendering: 'crisp-edges' }}
           draggable={false}
         />
         <p
-          className="font-body text-primary-foreground text-sm md:text-base font-light max-w-xl mx-auto mb-8 opacity-80"
+          className="font-body text-primary-foreground text-sm md:text-base font-light max-w-md mx-auto mb-8 text-center opacity-[0.88]"
         >
           A boutique massage experience designed for your well-being
         </p>
