@@ -17,13 +17,13 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-        <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl text-gold font-semibold tracking-wide mb-16 animate-fade-up">
+        <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl text-gold font-semibold tracking-wide mb-8 animate-fade-up">
           Be'YOU'tique
         </h2>
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-primary-foreground font-light leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-primary-foreground font-light leading-tight mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
           Relax, Renew, Revitalize
         </h1>
-        <p className="font-body text-primary-foreground/80 text-base md:text-lg font-light max-w-xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+        <p className="font-body text-primary-foreground/80 text-base md:text-lg font-light max-w-xl mx-auto mb-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
           A boutique massage experience designed for your well-being
         </p>
         <a
