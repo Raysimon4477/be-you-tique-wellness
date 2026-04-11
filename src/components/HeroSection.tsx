@@ -17,16 +17,16 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-primary/60" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto gap-3">
         <img
           src={logoImg}
           alt="Be'YOU'tique – Relax Renew Revitalize"
-          className="max-w-[340px] md:max-w-[600px] w-auto h-auto mb-6"
+          className="max-w-[340px] md:max-w-[600px] w-auto h-auto"
           style={{ imageRendering: 'crisp-edges' }}
           draggable={false}
         />
         <p
-          className="font-body text-primary-foreground text-sm md:text-base font-light max-w-md mx-auto mb-8 text-center opacity-[0.88]"
+          className="font-body text-primary-foreground text-sm md:text-base font-light max-w-md mx-auto text-center opacity-[0.88]"
         >
           A boutique massage experience designed for your well-being
         </p>
