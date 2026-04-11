@@ -11,9 +11,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/40">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
-        <a href="#" className="font-heading text-2xl font-semibold text-primary tracking-wide leading-none">
-          Be'YOU'tique
-        </a>
+        <div className="w-[120px] hidden md:block" />
 
         <nav className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
@@ -25,15 +23,16 @@ const Header = () => {
               {item}
             </a>
           ))}
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gold hover:bg-gold-light text-primary-foreground font-body text-xs tracking-[0.15em] uppercase px-5 py-2 rounded-full transition-all duration-300 ml-2"
-          >
-            Book Now
-          </a>
         </nav>
+
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex bg-gold hover:bg-gold-light text-primary-foreground font-body text-xs tracking-[0.15em] uppercase px-5 py-2 rounded-full transition-all duration-300"
+        >
+          Book Now
+        </a>
 
         <button
           onClick={() => setOpen(!open)}
