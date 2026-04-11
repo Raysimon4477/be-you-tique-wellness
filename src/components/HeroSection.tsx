@@ -21,7 +21,9 @@ const HeroSection = () => {
         <img
           src={logoImg}
           alt="Be'YOU'tique – Relax Renew Revitalize"
-          className="w-[360px] max-w-[92vw] md:w-[520px] lg:w-[600px] h-auto mb-4 animate-fade-up"
+          className="max-w-[280px] md:max-w-[360px] lg:max-w-[400px] w-auto h-auto mb-6 animate-fade-up"
+          style={{ imageRendering: 'auto' }}
+          draggable={false}
         />
         <p
           className="font-body text-primary-foreground text-base md:text-lg font-light max-w-xl mx-auto mb-8 animate-fade-up"
