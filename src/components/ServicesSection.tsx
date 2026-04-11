@@ -133,7 +133,7 @@ const ServicesSection = () => {
               <AccordionItem
                 key={category.title}
                 value={category.title}
-                className="border border-border rounded-2xl bg-background px-6 md:px-8 shadow-sm data-[state=open]:shadow-md transition-shadow duration-500"
+                className={`border border-border rounded-2xl bg-background px-6 md:px-8 shadow-sm data-[state=open]:shadow-md transition-shadow duration-500 ${category.featured ? 'mt-2 mb-2' : ''}`}
               >
                 <AccordionTrigger className="py-6 hover:no-underline gap-4">
                   <div className="flex items-center gap-4">
