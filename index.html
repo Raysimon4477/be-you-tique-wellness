@@ -13,17 +13,162 @@
     <link rel="alternate icon" href="/favicon.ico" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sheldon's Walking Tours" />
     <meta property="og:title" content="Sheldon's Walking Tours — Hidden Cape Town" />
     <meta
       property="og:description"
       content="Street art, architecture, stories and culture — walking tours through hidden Cape Town. Bo-Kaap, Woodstock, Muizenberg and more."
     />
-    <meta name="twitter:card" content="summary" />
+    <meta
+      property="og:image"
+      content="https://commons.wikimedia.org/wiki/Special:FilePath/Cape%20Town%20skyline%20with%20Table%20Mountain.jpg?width=1200"
+    />
+    <meta property="og:image:alt" content="Cape Town city bowl beneath Table Mountain" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sheldon's Walking Tours — Hidden Cape Town" />
     <meta
       name="twitter:description"
       content="Street art, architecture, stories and culture — walking tours through hidden Cape Town."
     />
+    <meta
+      name="twitter:image"
+      content="https://commons.wikimedia.org/wiki/Special:FilePath/Cape%20Town%20skyline%20with%20Table%20Mountain.jpg?width=1200"
+    />
+
+    <!--
+      Structured data lives here rather than in the React tree so crawlers read
+      it without executing JavaScript. Keep in sync with src/data/tours.ts.
+      TODO: add "telephone" and "url" once the WhatsApp number and domain are set.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "TouristInformationCenter",
+            "@id": "#business",
+            "name": "Sheldon's Walking Tours",
+            "description": "Guided walking tours of hidden Cape Town — street art, architecture, heritage, stories and culture.",
+            "areaServed": { "@type": "City", "name": "Cape Town" },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Cape Town",
+              "addressRegion": "Western Cape",
+              "addressCountry": "ZA"
+            },
+            "knowsLanguage": "en",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Walking tours & experiences",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "TouristTrip",
+                    "name": "Signature Hidden Gems Tour",
+                    "description": "Street art, architecture, heritage and the stories behind Cape Town, starting around Heritage Square.",
+                    "touristType": "Culture and history travellers"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "TouristTrip",
+                    "name": "Bo-Kaap Walking Tour",
+                    "description": "Cape Malay history and culture, Tuan Guru and the Auwal Masjid, and the deeper story behind the colourful houses."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "TouristTrip",
+                    "name": "Woodstock & Salt River Street Art Tour",
+                    "description": "Street art and murals, local communities, and the social and cultural history of Woodstock and Salt River."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "TouristTrip",
+                    "name": "Cape Town Architecture & Heritage Tour",
+                    "description": "Historic buildings and architectural styles — colonial, Victorian and Cape Dutch influences in the historic city centre."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "TouristTrip",
+                    "name": "Muizenberg Walking Tour",
+                    "description": "Muizenberg's seaside history and character, its architecture and community, and the famous colourful beach huts."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "TouristTrip",
+                    "name": "Cape Malay Cooking Experience",
+                    "description": "Traditional Cape Malay cooking, hosted with a local Bo-Kaap cooking experience and usually paired with the Bo-Kaap walking tour."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I book a tour?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Fill in the booking form or tap any WhatsApp button — your request goes straight to Sheldon. No payment is needed to enquire; availability, meeting details and rates are confirmed with you directly on WhatsApp."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does a tour cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Rates depend on the tour and the size of your group. Send a WhatsApp message with your preferred tour and dates, and you'll get current pricing straight away."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long are the walks, and how fit do I need to be?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most walks run around two to three hours at a relaxed, easy pace with plenty of stops for stories and photographs. If you can manage a comfortable stroll, you can manage these tours."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I book a private or customised tour?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes — every walk can be arranged as a private tour, and routes can be tailored around your interests. Mention what you have in mind in your booking request."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should I bring?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Comfortable walking shoes, sunscreen, a hat and water in summer, a light jacket in winter — and your camera. Everything else is taken care of."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where do the tours start?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Each tour has its own meeting point — for example, the Signature Hidden Gems Tour gathers around Heritage Square and the Woodstock tour at the Old Biscuit Mill. The exact spot is confirmed when you book."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>

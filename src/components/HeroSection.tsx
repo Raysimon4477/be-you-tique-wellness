@@ -6,7 +6,7 @@ import { HERO_PHOTO } from "@/data/tours";
 const TRUST_ITEMS = [
   { icon: MapPinned, label: "Led by a local storyteller" },
   { icon: Users, label: "Small groups & private walks" },
-  { icon: MessageCircle, label: "Book in minutes on WhatsApp" },
+  { icon: MessageCircle, label: "Book on WhatsApp" },
 ];
 
 const HeroSection = () => {
@@ -19,13 +19,20 @@ const HeroSection = () => {
         <img
           src={HERO_PHOTO.src}
           alt={HERO_PHOTO.alt}
+          fetchPriority="high"
           onError={() => setPhotoFailed(true)}
           className="absolute inset-0 h-full w-full object-cover"
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink-deep via-ink-deep/55 to-ink-deep/45" />
+      {/* Two-part scrim: a vertical wash anchors the nav and the section join,
+          while a soft pool behind the copy guarantees contrast on bright
+          daylight photos without flattening the whole image. */}
+      <div className="absolute inset-0 bg-gradient-to-b from-ink-deep/85 via-ink-deep/30 to-ink-deep/90" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_45%,hsl(var(--ink-deep)/0.72)_0%,hsl(var(--ink-deep)/0.45)_45%,transparent_78%)]" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 pb-24 pt-32 text-center">
+      <div
+        className="relative z-10 mx-auto max-w-5xl px-6 pb-24 pt-32 text-center [text-shadow:0_2px_18px_hsl(var(--ink-deep)/0.55)]"
+      >
         <p className="animate-fade-up font-body text-xs font-semibold uppercase tracking-[0.4em] text-gold-light md:text-sm">
           Walking Tours &middot; Cape Town
         </p>
@@ -38,7 +45,7 @@ const HeroSection = () => {
           of <span className="italic text-gold-light">Cape Town</span>
         </h1>
         <p
-          className="mx-auto mt-6 max-w-2xl animate-fade-up font-body text-base font-light leading-relaxed text-primary-foreground/85 md:text-lg"
+          className="mx-auto mt-6 max-w-2xl animate-fade-up font-body text-base font-light leading-relaxed text-primary-foreground/95 md:text-lg"
           style={{ animationDelay: "0.3s", opacity: 0 }}
         >
           Street art tucked into side lanes. Architecture spanning three centuries.
@@ -64,13 +71,13 @@ const HeroSection = () => {
         </div>
 
         <div
-          className="mt-12 flex animate-fade-up flex-col items-center justify-center gap-3 sm:flex-row sm:gap-8"
+          className="mt-12 flex animate-fade-up flex-wrap items-center justify-center gap-x-8 gap-y-3"
           style={{ animationDelay: "0.6s", opacity: 0 }}
         >
           {TRUST_ITEMS.map(({ icon: Icon, label }) => (
             <span
               key={label}
-              className="flex items-center gap-2 font-body text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground/70"
+              className="flex items-center gap-2 whitespace-nowrap font-body text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground/85"
             >
               <Icon size={15} className="text-gold-light" />
               {label}
