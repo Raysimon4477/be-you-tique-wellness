@@ -1,5 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { BUSINESS, whatsappLink, DEFAULT_WHATSAPP_MESSAGE } from "@/config";
+import { PHOTO_CREDITS } from "@/data/tours";
 
 const Footer = () => {
   return (
@@ -49,6 +50,22 @@ const Footer = () => {
         <div className="mt-10 border-t border-primary-foreground/10 pt-6 text-center">
           <p className="font-body text-xs text-primary-foreground/45">
             &copy; {new Date().getFullYear()} {BUSINESS.name} &middot; {BUSINESS.city}
+          </p>
+          <p className="mt-3 font-body text-[0.65rem] leading-relaxed text-primary-foreground/35">
+            Photography via Wikimedia Commons (free licences):{" "}
+            {PHOTO_CREDITS.map((p, i) => (
+              <span key={p.creditUrl}>
+                {i > 0 && " · "}
+                <a
+                  href={p.creditUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-primary-foreground/20 underline-offset-2 transition-colors hover:text-primary-foreground/60"
+                >
+                  {p.creditLabel}
+                </a>
+              </span>
+            ))}
           </p>
         </div>
       </div>

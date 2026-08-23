@@ -458,6 +458,8 @@ export const TourIllustration = ({ variant }: { variant: string }) => {
       return <ArchitectureArt />;
     case "muizenberg":
       return <MuizenbergArt />;
+    case "cooking":
+      return <CookingArt />;
     default:
       return <SignatureArt />;
   }

@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ToursSection from "@/components/ToursSection";
 import ExperiencesSection from "@/components/ExperiencesSection";
+import FaqSection from "@/components/FaqSection";
 import BookingSection from "@/components/BookingSection";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
@@ -23,6 +24,7 @@ const Index = () => {
       <AboutSection />
       <ToursSection onBook={handleBook} />
       <ExperiencesSection onBook={handleBook} />
+      <FaqSection />
       <BookingSection selectedTour={selectedTour} />
       <Footer />
       <WhatsAppFab />

@@ -1,6 +1,6 @@
 import { Clock, MapPin, Sparkles, Check } from "lucide-react";
 import { SIGNATURE_TOUR, TOURS, type Tour } from "@/data/tours";
-import { TourIllustration } from "@/components/illustrations";
+import SmartImage from "@/components/SmartImage";
 
 interface ToursSectionProps {
   onBook: (tourId: string) => void;
@@ -47,7 +47,7 @@ const ToursSection = ({ onBook }: ToursSectionProps) => {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="relative min-h-[260px] lg:min-h-full">
               <div className="absolute inset-0">
-                <TourIllustration variant={SIGNATURE_TOUR.illustration} />
+                <SmartImage photo={SIGNATURE_TOUR.photo} fallback={SIGNATURE_TOUR.illustration} />
               </div>
             </div>
             <div className="p-8 md:p-12">
@@ -93,7 +93,7 @@ const ToursSection = ({ onBook }: ToursSectionProps) => {
             >
               <div className="relative aspect-[3/2] overflow-hidden">
                 <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.04]">
-                  <TourIllustration variant={tour.illustration} />
+                  <SmartImage photo={tour.photo} fallback={tour.illustration} />
                 </div>
               </div>
               <div className="flex flex-1 flex-col p-7 md:p-8">

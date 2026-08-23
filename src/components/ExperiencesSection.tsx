@@ -1,6 +1,6 @@
 import { UtensilsCrossed, Compass } from "lucide-react";
 import { EXPERIENCES, COMING_SOON } from "@/data/tours";
-import { CookingArt } from "@/components/illustrations";
+import SmartImage from "@/components/SmartImage";
 
 interface ExperiencesSectionProps {
   onBook: (id: string) => void;
@@ -46,7 +46,7 @@ const ExperiencesSection = ({ onBook }: ExperiencesSectionProps) => {
             </div>
             <div className="relative order-1 min-h-[260px] lg:order-2 lg:min-h-full">
               <div className="absolute inset-0">
-                <CookingArt />
+                <SmartImage photo={cooking.photo} fallback="cooking" />
               </div>
             </div>
           </div>

@@ -1,3 +1,30 @@
+/**
+ * Interim photography is hotlinked from Wikimedia Commons (freely licensed;
+ * credit links in PHOTO_CREDITS render in the footer). Each photo falls back
+ * to the matching illustration if it fails to load. Replace `src` values with
+ * the business's own photos when available.
+ */
+export interface TourPhoto {
+  src: string;
+  alt: string;
+  creditUrl: string;
+  creditLabel: string;
+}
+
+const commonsPhoto = (file: string, alt: string, creditLabel: string, width = 1280): TourPhoto => ({
+  src: `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${width}`,
+  alt,
+  creditUrl: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, "_"))}`,
+  creditLabel,
+});
+
+export const HERO_PHOTO = commonsPhoto(
+  "Cape Town skyline with Table Mountain.jpg",
+  "Cape Town city bowl beneath Table Mountain",
+  "Cape Town skyline",
+  1920,
+);
+
 export interface Tour {
   id: string;
   name: string;
@@ -9,6 +36,7 @@ export interface Tour {
   meetingPoint?: string;
   note?: string;
   illustration: "signature" | "bokaap" | "woodstock" | "architecture" | "muizenberg";
+  photo?: TourPhoto;
 }
 
 export const SIGNATURE_TOUR: Tour = {
@@ -27,6 +55,11 @@ export const SIGNATURE_TOUR: Tour = {
   duration: "Approx. 3 hours",
   meetingPoint: "Heritage Square / Cape Heritage Hotel area (confirmed on booking)",
   illustration: "signature",
+  photo: commonsPhoto(
+    "Greenmarket Square, Cape Town.JPG",
+    "Greenmarket Square in Cape Town's historic centre",
+    "Greenmarket Square",
+  ),
 };
 
 export const TOURS: Tour[] = [
@@ -45,6 +78,11 @@ export const TOURS: Tour[] = [
     ],
     note: "Can be combined with the Cape Malay Cooking Experience.",
     illustration: "bokaap",
+    photo: commonsPhoto(
+      "Bo-Kaap colourful houses (30114819980).jpg",
+      "The colourful houses of the Bo-Kaap",
+      "Bo-Kaap houses",
+    ),
   },
   {
     id: "woodstock-salt-river",
@@ -76,6 +114,11 @@ export const TOURS: Tour[] = [
       "Heritage & cultural history",
     ],
     illustration: "architecture",
+    photo: commonsPhoto(
+      "CapeTown CityHall.jpg",
+      "Cape Town City Hall's Edwardian facade",
+      "Cape Town City Hall",
+    ),
   },
   {
     id: "muizenberg",
@@ -91,8 +134,16 @@ export const TOURS: Tour[] = [
       "Historic areas of the village",
     ],
     illustration: "muizenberg",
+    photo: commonsPhoto(
+      "Muizenberg Beach Huts.JPG",
+      "The famous colourful beach huts at Muizenberg",
+      "Muizenberg beach huts",
+    ),
   },
 ];
+// Note: the Woodstock tour intentionally keeps its illustration — photographs
+// of murals carry the artists' copyright (South Africa has no freedom of
+// panorama for artworks), so a commissioned/own photo should be used there.
 
 export const ALL_TOURS: Tour[] = [SIGNATURE_TOUR, ...TOURS];
 
@@ -101,6 +152,7 @@ export interface Experience {
   name: string;
   description: string;
   note?: string;
+  photo?: TourPhoto;
 }
 
 export const EXPERIENCES: Experience[] = [
@@ -110,6 +162,55 @@ export const EXPERIENCES: Experience[] = [
     description:
       "Roll up your sleeves for a hands-on taste of the Bo-Kaap. Learn the secrets of traditional Cape Malay cooking — fragrant curries, folded rotis and generations-old family recipes — hosted and coordinated with a local Bo-Kaap cooking experience.",
     note: "Usually offered together with the Bo-Kaap Walking Tour for the full experience.",
+    photo: commonsPhoto(
+      "Bobotie South Africa.jpg",
+      "Bobotie, a classic Cape Malay dish",
+      "Bobotie",
+    ),
+  },
+];
+
+export const PHOTO_CREDITS: TourPhoto[] = [
+  HERO_PHOTO,
+  ...[SIGNATURE_TOUR, ...TOURS].map((t) => t.photo).filter((p): p is TourPhoto => Boolean(p)),
+  ...EXPERIENCES.map((e) => e.photo).filter((p): p is TourPhoto => Boolean(p)),
+];
+
+export interface Faq {
+  question: string;
+  answer: string;
+}
+
+export const FAQS: Faq[] = [
+  {
+    question: "How do I book a tour?",
+    answer:
+      "Fill in the booking form or tap any WhatsApp button — your request goes straight to Sheldon. No payment is needed to enquire; availability, meeting details and rates are confirmed with you directly on WhatsApp.",
+  },
+  {
+    question: "How much does a tour cost?",
+    answer:
+      "Rates depend on the tour and the size of your group. Send a WhatsApp message with your preferred tour and dates, and you'll get current pricing straight away.",
+  },
+  {
+    question: "How long are the walks, and how fit do I need to be?",
+    answer:
+      "Most walks run around two to three hours at a relaxed, easy pace with plenty of stops for stories and photographs. If you can manage a comfortable stroll, you can manage these tours.",
+  },
+  {
+    question: "Can I book a private or customised tour?",
+    answer:
+      "Yes — every walk can be arranged as a private tour, and routes can be tailored around your interests. Mention what you have in mind in your booking request.",
+  },
+  {
+    question: "What should I bring?",
+    answer:
+      "Comfortable walking shoes, sunscreen, a hat and water in summer, a light jacket in winter — and your camera. Everything else is taken care of.",
+  },
+  {
+    question: "Where do the tours start?",
+    answer:
+      "Each tour has its own meeting point — for example, the Signature Hidden Gems Tour gathers around Heritage Square and the Woodstock tour at the Old Biscuit Mill. The exact spot is confirmed when you book.",
   },
 ];
 

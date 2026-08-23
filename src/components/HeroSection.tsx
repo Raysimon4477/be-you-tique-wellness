@@ -1,11 +1,29 @@
-import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, MapPinned, Users, MessageCircle } from "lucide-react";
 import { HeroScene } from "@/components/illustrations";
+import { HERO_PHOTO } from "@/data/tours";
+
+const TRUST_ITEMS = [
+  { icon: MapPinned, label: "Led by a local storyteller" },
+  { icon: Users, label: "Small groups & private walks" },
+  { icon: MessageCircle, label: "Book in minutes on WhatsApp" },
+];
 
 const HeroSection = () => {
+  const [photoFailed, setPhotoFailed] = useState(false);
+
   return (
     <section id="top" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ink-deep">
       <HeroScene />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink-deep/70 via-transparent to-ink-deep/30" />
+      {!photoFailed && (
+        <img
+          src={HERO_PHOTO.src}
+          alt={HERO_PHOTO.alt}
+          onError={() => setPhotoFailed(true)}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-ink-deep via-ink-deep/55 to-ink-deep/45" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 pb-24 pt-32 text-center">
         <p className="animate-fade-up font-body text-xs font-semibold uppercase tracking-[0.4em] text-gold-light md:text-sm">
@@ -43,6 +61,21 @@ const HeroSection = () => {
           >
             Explore the Tours
           </a>
+        </div>
+
+        <div
+          className="mt-12 flex animate-fade-up flex-col items-center justify-center gap-3 sm:flex-row sm:gap-8"
+          style={{ animationDelay: "0.6s", opacity: 0 }}
+        >
+          {TRUST_ITEMS.map(({ icon: Icon, label }) => (
+            <span
+              key={label}
+              className="flex items-center gap-2 font-body text-xs font-medium uppercase tracking-[0.15em] text-primary-foreground/70"
+            >
+              <Icon size={15} className="text-gold-light" />
+              {label}
+            </span>
+          ))}
         </div>
       </div>
 
